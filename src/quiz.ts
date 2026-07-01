@@ -5,11 +5,14 @@ import type { Word } from './types'
 
 export type QuestionKind = 'fa_to_de' | 'de_to_fa'
 
+// Jede Option trägt die vollen Felder ihres Worts, damit nach der Auflösung jede
+// Option ihre echte Identität zeigen kann (Distraktoren inklusive).
 export interface Option {
   key: string
-  label: string
-  scriptFa?: string // nur bei de_to_fa: persische Schrift zusätzlich zur Translit
   correct: boolean
+  scriptFa: string
+  translit: string
+  translationDe: string
 }
 
 export interface Question {
@@ -49,41 +52,27 @@ function pickDistractors(target: Word, pool: Word[], keyFn: (w: Word) => string,
   return unique.slice(0, n)
 }
 
+function toOption(w: Word, correct: boolean): Option {
+  return {
+    key: w.id,
+    correct,
+    scriptFa: w.scriptFa,
+    translit: w.translit,
+    translationDe: w.translationDe,
+  }
+}
+
 export function generateQuestion(target: Word, pool: Word[]): Question {
   const kinds: QuestionKind[] = ['fa_to_de', 'de_to_fa']
   const kind = kinds[Math.floor(Math.random() * kinds.length)]
 
-  if (kind === 'fa_to_de') {
-    const distractors = pickDistractors(target, pool, (w) => w.translationDe, 3)
-    const options: Option[] = shuffle([
-      { key: target.id, label: target.translationDe, correct: true },
-      ...distractors.map((d) => ({ key: d.id, label: d.translationDe, correct: false })),
-    ])
-    return {
-      kind,
-      word: target,
-      prompt: 'Was bedeutet dieses Wort?',
-      stemScript: target.scriptFa,
-      options,
-    }
-  }
+  // Distraktoren unterscheiden sich bei fa_to_de in der Übersetzung, bei de_to_fa im Wort.
+  const keyFn = kind === 'fa_to_de' ? (w: Word) => w.translationDe : (w: Word) => w.translit
+  const distractors = pickDistractors(target, pool, keyFn, 3)
+  const options = shuffle([toOption(target, true), ...distractors.map((d) => toOption(d, false))])
 
-  // de_to_fa
-  const distractors = pickDistractors(target, pool, (w) => w.translit, 3)
-  const options: Option[] = shuffle([
-    { key: target.id, label: target.translit, scriptFa: target.scriptFa, correct: true },
-    ...distractors.map((d) => ({
-      key: d.id,
-      label: d.translit,
-      scriptFa: d.scriptFa,
-      correct: false,
-    })),
-  ])
-  return {
-    kind,
-    word: target,
-    prompt: 'Welches Wort ist das?',
-    stemText: target.translationDe,
-    options,
+  if (kind === 'fa_to_de') {
+    return { kind, word: target, prompt: 'Was bedeutet dieses Wort?', stemScript: target.scriptFa, options }
   }
+  return { kind, word: target, prompt: 'Welches Wort ist das?', stemText: target.translationDe, options }
 }

@@ -8,8 +8,9 @@ Aussprache, durchgängige Romanisierung und Etymologie. Einzelnutzer, statisch d
   SM-2-Wiederholungsplanung. Nach jeder Antwort volle Wort-Info inkl. Etymologie.
 - **Alphabet** — Referenz aller 32 Buchstaben + Quiz (Schrift ↔ Umschrift) mit persischer
   Bildschirm-Tastatur und optionalem Toleranzmodus (gleicher Laut zählt).
-- **Grammatik** — Referenztabellen (Pronomen, Präsenskonjugation, Possessivsuffixe),
-  umgangssprachlich vs. schriftsprachlich getrennt.
+- **Grammatik** — Referenztabellen (Pronomen, Präsenskonjugation, Possessivsuffixe,
+  Verbstämme), umgangssprachlich vs. schriftsprachlich getrennt, plus Quiz (Formen +
+  Präsensstämme).
 
 ## Technik
 - React + Vite + TypeScript
@@ -23,6 +24,9 @@ npm run dev      # Dev-Server
 npm run build    # Produktions-Build nach dist/
 ```
 
-Deployment: statisch (GitHub Pages), `base` in `vite.config.ts` gesetzt.
+## Deployment
+Automatisch via GitHub Actions (`.github/workflows/deploy.yml`) bei Push auf `main`.
+Einmalig aktivieren: Repo-Settings → Pages → Source = „GitHub Actions".
+Der `base`-Pfad in `vite.config.ts` (`/learnfarsi/`) muss dem Repo-Namen entsprechen.
 
 Entscheidungen und Kontext werden in `NOTES.md` festgehalten.

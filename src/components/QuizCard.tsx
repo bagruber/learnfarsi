@@ -1,5 +1,5 @@
 // Multiple-Choice-Karte. Zeigt Frage + 4 Optionen. Nach der Antwort: richtig/falsch
-// markiert, plus komplette Wort-Info als Feedback/Weiterlernen.
+// markiert, jede Option löst ihre echte Bedeutung auf, plus komplette Info zum Zielwort.
 
 import type { Question, Option } from '../quiz'
 import { TranslitText } from '../translit'
@@ -9,12 +9,13 @@ import { REGISTER_LABEL } from '../labels'
 interface Props {
   question: Question
   answered: Option | null
+  showTranslitHelp: boolean
   onAnswer: (option: Option) => void
   onNext: () => void
 }
 
-export function QuizCard({ question, answered, onAnswer, onNext }: Props) {
-  const { word } = question
+export function QuizCard({ question, answered, showTranslitHelp, onAnswer, onNext }: Props) {
+  const { word, kind } = question
 
   function optionClass(opt: Option): string {
     if (!answered) return 'option'
@@ -43,12 +44,35 @@ export function QuizCard({ question, answered, onAnswer, onNext }: Props) {
               disabled={!!answered}
               onClick={() => onAnswer(opt)}
             >
-              <span className="option-label">{opt.label}</span>
-              {opt.scriptFa && (
-                <span className="option-script" dir="rtl" lang="fa">
+              {kind === 'de_to_fa' ? (
+                <span className="option-main" dir="rtl" lang="fa">
                   {opt.scriptFa}
                 </span>
+              ) : (
+                <span className="option-main">{opt.translationDe}</span>
               )}
+
+              {/* optionale Transkriptions-Hilfe (nur de→fa, vor der Antwort) */}
+              {kind === 'de_to_fa' && showTranslitHelp && !answered && (
+                <span className="option-help">
+                  <TranslitText value={opt.translit} />
+                </span>
+              )}
+
+              {/* Auflösung: echte Identität jeder Option */}
+              {answered &&
+                (kind === 'de_to_fa' ? (
+                  <span className="option-reveal">
+                    <TranslitText value={opt.translit} /> · {opt.translationDe}
+                  </span>
+                ) : (
+                  <span className="option-reveal">
+                    <span dir="rtl" lang="fa" className="reveal-script">
+                      {opt.scriptFa}
+                    </span>{' '}
+                    · <TranslitText value={opt.translit} />
+                  </span>
+                ))}
             </button>
           ))}
         </div>
@@ -59,7 +83,7 @@ export function QuizCard({ question, answered, onAnswer, onNext }: Props) {
               {answered.correct ? 'Richtig' : 'Leider falsch'}
             </p>
 
-            {/* Komplette Wort-Info als Hilfe / weiterführende Info. */}
+            {/* Komplette Info zum Zielwort. */}
             <div className="word-info">
               <div className="fa-script small" dir="rtl" lang="fa">
                 {word.scriptFa}

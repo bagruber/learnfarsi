@@ -11,6 +11,31 @@ export interface Letter {
   note?: string
 }
 
+export type LetterForm = 'isolated' | 'initial' | 'medial' | 'final'
+
+export const LETTER_FORMS: { value: LetterForm; label: string }[] = [
+  { value: 'isolated', label: 'isoliert' },
+  { value: 'initial', label: 'initial' },
+  { value: 'medial', label: 'medial' },
+  { value: 'final', label: 'final' },
+]
+
+// Verbindungsform mit Zero-Width-Joinern erzwingen, damit der Buchstabe isoliert in
+// seiner Positionsform erscheint. Nicht-verbindende Buchstaben bleiben unverändert.
+const ZWJ = '‍'
+export function letterForm(char: string, form: LetterForm): string {
+  switch (form) {
+    case 'initial':
+      return char + ZWJ
+    case 'medial':
+      return ZWJ + char + ZWJ
+    case 'final':
+      return ZWJ + char
+    default:
+      return char
+  }
+}
+
 export const alphabet: Letter[] = [
   { char: 'ا', name: 'alef', translit: 'ā', sound: 'ā', origin: 'persian', note: 'Träger für Langvokal ā / Vokalzeichen am Wortanfang' },
   { char: 'ب', name: 'be', translit: 'b', sound: 'b', origin: 'persian' },

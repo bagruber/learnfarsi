@@ -4,7 +4,7 @@
 //  • Schrift → Umschrift: aus 4 Romanisierungen die richtige wählen.
 
 import { useState } from 'react'
-import { alphabet, type Letter } from '../data/alphabet'
+import { alphabet, letterForm, LETTER_FORMS, type Letter, type LetterForm } from '../data/alphabet'
 import { TranslitText } from '../translit'
 
 type Direction = 'toScript' | 'toTranslit'
@@ -30,9 +30,10 @@ interface Answer {
   correct: boolean
 }
 
-export function AlphabetQuiz() {
+export function AlphabetQuiz({ baseline }: { baseline: boolean }) {
   const [direction, setDirection] = useState<Direction>('toScript')
   const [tolerant, setTolerant] = useState(false)
+  const [form, setForm] = useState<LetterForm>('isolated')
   const [target, setTarget] = useState<Letter>(() => alphabet[rand(alphabet.length)])
   const [options, setOptions] = useState<Letter[]>(() => buildOptions(target))
   const [answered, setAnswered] = useState<Answer | null>(null)
@@ -116,7 +117,7 @@ export function AlphabetQuiz() {
 
             <div className="keyboard" dir="rtl" lang="fa">
               {alphabet.map((l) => {
-                let cls = 'key'
+                let cls = baseline ? 'key baseline' : 'key'
                 if (answered) {
                   if (correctChars.has(l.char)) cls += ' key-correct'
                   else if (l.char === answered.picked) cls += ' key-wrong'
@@ -138,8 +139,19 @@ export function AlphabetQuiz() {
         ) : (
           <>
             <p className="prompt">Wie wird dieser Buchstabe umschrieben?</p>
-            <div className="alpha-char big" dir="rtl" lang="fa">
-              {target.char}
+            <div className="seg form-seg">
+              {LETTER_FORMS.map((f) => (
+                <button
+                  key={f.value}
+                  className={form === f.value ? 'seg-btn seg-active' : 'seg-btn'}
+                  onClick={() => setForm(f.value)}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+            <div className={baseline ? 'alpha-char big baseline' : 'alpha-char big'} dir="rtl" lang="fa">
+              {letterForm(target.char, form)}
             </div>
             <div className="options">
               {options.map((l) => {
@@ -156,7 +168,10 @@ export function AlphabetQuiz() {
                     disabled={!!answered}
                     onClick={() => answerTranslit(l)}
                   >
-                    <TranslitText value={l.translit} />
+                    <span className="option-main">
+                      <TranslitText value={l.translit} />
+                    </span>
+                    {answered && <span className="option-reveal">{l.name}</span>}
                   </button>
                 )
               })}

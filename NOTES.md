@@ -52,10 +52,35 @@ wird später geklärt (vorab-generierte Files bevorzugt vor Live-TTS).
 „Schrift → Umschrift" als MC. **Toleranz-Modus** nutzt das Feld `sound` (Basislaut ohne
 Diacritic): im Toleranzmodus zählen alle gleichklingenden Buchstaben (s → س ص ث). Alphabet-Quiz
 hat bewusst **kein** SRS/Dexie — reines Übungsquiz, State nur lokal.
+**Positionsformen** (isoliert/initial/medial/final) via Zero-Width-Joiner (U+200D) erzwungen
+statt eigener Glyph-Tabellen — Font-Shaping erledigt die Formwahl. **Hilfslinie** ist ein
+Overlay via `::after`-Pseudoelement (kollidiert nicht mit den grün/rot-Antwortmarkierungen).
+
+### Grammatik-Quiz
+`src/data/paradigms.ts` (strukturierte Paradigmen: Präsens mehrerer Verben, Possessivsuffixe,
+Pronomen — umgangssprachliche Formen). `GrammarQuiz` lässt die richtige Form zu einer Person
+wählen, Auflösung zeigt für jede Option die zugehörige Person. Paradigmen bewusst **getrennt**
+von den Anzeigetabellen (`grammar.ts`), damit der Generator simpel bleibt (kleine Duplizierung
+in Kauf genommen). Grammatik-Tab hat jetzt Sub-Modi Referenz/Quiz (wie Alphabet).
+
+### Verbstämme
+`src/data/verbstems.ts` (Infinitiv, Präsensstamm, Vergangenheitsstamm). Als Referenztabelle
+(generiert in `grammar.ts`) und als Quizfragen (in `GrammarQuiz` gemischt, ~40% Verbstamm,
+sonst Paradigma): gefragt wird der oft unregelmäßige Präsensstamm zum Infinitiv.
+`GrammarQuiz` wurde dafür auf ein neutrales Frageformat (context/focus/options) generalisiert.
+
+### Deployment (GitHub Pages)
+`.github/workflows/deploy.yml`: baut bei Push auf `main` und deployt `dist/` via GitHub
+Actions auf Pages. `base: '/learnfarsi/'` setzt Repo-Name voraus. **Manuell einmalig nötig:**
+Repo-Settings → Pages → Source = „GitHub Actions". Der lokale Fortschritt (IndexedDB) läuft
+auf Pages; nur echte Geräte-Sync fehlt weiterhin (bewusst).
 
 ### Vokabelumfang
-Von ~32 auf ~67 erweitert (Zahlen 4–10 mit PIE-Cognates, häufige Verben, Fragewörter,
-weitere Nomen). „bad" bewusst als **falscher Freund** markiert (kein Verwandter von engl. bad).
+Von ~32 → ~67 → **~155** Wörter (Familie, Körper, Natur, Essen, Farben, Zeit, Verben,
+Präpositionen, Grußformeln). Viele echte PIE-Cognates als Etymologie-Anker. „bad" als
+**falscher Freund** markiert. Mehrdeutige Schreibungen notiert (شیر = Milch/Löwe, کی = wer/wann,
+نه = neun/nein). Kanten mit arabisch-stämmigen Buchstaben in nativen Wörtern (غ in morgh, ذ in
+gozāshtan) bewusst **ausgelassen**, um die „kein Diacritic = persisch"-Regel nicht zu untergraben.
 
 ## Geplant / als Nächstes
 - **Grammatik-Tabellen** (Präpositionen, Pronomen, Verbkonjugation) — eigenes Modul.

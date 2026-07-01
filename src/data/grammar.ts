@@ -1,6 +1,8 @@
 // Grammatik-Referenz als Tabellen (Latein-Stil). Gesprochenes Persisch primär,
 // Schriftsprache getrennt markiert. Romanisierte Zellen bekommen im UI die Translit-Tooltips.
 
+import { verbStems } from './verbstems'
+
 export interface GrammarTable {
   id: string
   title: string
@@ -54,5 +56,14 @@ export const grammarTables: GrammarTable[] = [
       ['2. Pl.', '-etun', '-etān', 'ketāb-etun'],
       ['3. Pl.', '-eshun', '-eshān', 'ketāb-eshun'],
     ],
+  },
+  {
+    id: 'verb-stems',
+    title: 'Verbstämme',
+    note: 'Der Präsensstamm ist oft unregelmäßig (rav statt raft-), der Vergangenheitsstamm '
+      + 'meist Infinitiv minus -an. Präsens = mi- + Präsensstamm + Endung; Vergangenheit = '
+      + 'Vergangenheitsstamm + Endung.',
+    columns: ['Infinitiv', 'Bedeutung', 'Präsensstamm', 'Vergangenheitsstamm'],
+    rows: verbStems.map((v) => [v.translit, v.meaning, v.presentStem, v.pastStem]),
   },
 ]

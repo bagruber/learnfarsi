@@ -15,6 +15,7 @@ type View = 'quiz' | 'alphabet' | 'grammar'
 
 export default function App() {
   const [view, setView] = useState<View>('quiz')
+  const [showTranslitHelp, setShowTranslitHelp] = useState(false)
   const [cards, setCards] = useState<Map<string, CardState>>(new Map())
   const [queue, setQueue] = useState<string[]>([])
   const [question, setQuestion] = useState<Question | null>(null)
@@ -147,13 +148,26 @@ export default function App() {
           <p className="muted">Lädt…</p>
         ) : question ? (
           <>
-            <p className="progress muted">
-              {queue.length} in dieser Runde offen · {reviewedCount} gemacht
-            </p>
+            <div className="quiz-bar">
+              <span className="progress muted">
+                {queue.length} in dieser Runde offen · {reviewedCount} gemacht
+              </span>
+              {question.kind === 'de_to_fa' && (
+                <label className="tolerance">
+                  <input
+                    type="checkbox"
+                    checked={showTranslitHelp}
+                    onChange={(e) => setShowTranslitHelp(e.target.checked)}
+                  />{' '}
+                  Transkription als Hilfe
+                </label>
+              )}
+            </div>
             <QuizCard
               key={queue[0]}
               question={question}
               answered={answered}
+              showTranslitHelp={showTranslitHelp}
               onAnswer={handleAnswer}
               onNext={handleNext}
             />
