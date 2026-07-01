@@ -102,7 +102,7 @@ export function QuizCard({ question, answered, showTranslitHelp, onAnswer, onNex
               </div>
             </div>
 
-            <button className="next-btn" onClick={onNext} autoFocus>
+            <button className="next-btn" onClick={onNext}>
               Weiter
             </button>
           </>

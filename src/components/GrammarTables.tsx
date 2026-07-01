@@ -11,6 +11,7 @@ export function GrammarTables() {
         <section key={table.id} className="grammar-table">
           <h2>{table.title}</h2>
           {table.note && <p className="grammar-note">{table.note}</p>}
+          <div className="table-scroll">
           <table>
             <thead>
               <tr>
@@ -41,6 +42,7 @@ export function GrammarTables() {
               ))}
             </tbody>
           </table>
+          </div>
         </section>
       ))}
     </div>

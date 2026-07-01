@@ -126,17 +126,20 @@ export default function App() {
             Grammatik
           </button>
         </nav>
-        <div className="header-actions">
-          <button onClick={handleExport}>Export</button>
-          <button onClick={() => fileRef.current?.click()}>Import</button>
-          <input
-            ref={fileRef}
-            type="file"
-            accept="application/json"
-            onChange={handleImportFile}
-            hidden
-          />
-        </div>
+        <details className="menu">
+          <summary aria-label="Daten (Export/Import)">⋯</summary>
+          <div className="menu-body">
+            <button onClick={handleExport}>Fortschritt exportieren</button>
+            <button onClick={() => fileRef.current?.click()}>Fortschritt importieren</button>
+            <input
+              ref={fileRef}
+              type="file"
+              accept="application/json"
+              onChange={handleImportFile}
+              hidden
+            />
+          </div>
+        </details>
       </header>
 
       <main>

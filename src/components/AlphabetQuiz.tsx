@@ -189,7 +189,7 @@ export function AlphabetQuiz({ baseline }: { baseline: boolean }) {
               {target.origin === 'arabic' ? 'arabische Herkunft' : 'persisch'}
               {target.note ? ` · ${target.note}` : ''}
             </p>
-            <button className="next-btn" onClick={next} autoFocus>
+            <button className="next-btn" onClick={next}>
               Weiter
             </button>
           </>

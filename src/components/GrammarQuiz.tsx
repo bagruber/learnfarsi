@@ -131,7 +131,6 @@ export function GrammarQuiz() {
                 setQ(newQuestion())
                 setAnswered(null)
               }}
-              autoFocus
             >
               Weiter
             </button>
