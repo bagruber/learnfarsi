@@ -457,6 +457,14 @@ button:hover {
   font-size: 72px;
   margin: 8px 0 20px;
 }
+/* Prominenter Zielbuchstabe (Umschrift → Schrift) */
+.alpha-target {
+  font-size: 64px;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1.1;
+  margin: 4px 0 12px;
+}
 .alpha-translit {
   font-size: 18px;
   color: var(--accent);
@@ -554,10 +562,29 @@ button:hover {
 /* --- Mobile --- */
 @media (max-width: 600px) {
   main {
-    padding: 20px 0;
+    /* unten Platz für den fixierten Weiter-Button */
+    padding: 20px 0 84px;
   }
   .card-main {
     padding: 20px 16px;
+  }
+  .alpha-target {
+    font-size: 52px;
+  }
+
+  /* Weiter immer erreichbar: am unteren Rand fixieren */
+  .next-btn {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 12px;
+    z-index: 30;
+    padding: 14px;
+    font-size: 17px;
+    background: var(--accent-bg);
+    border-color: var(--accent-border);
+    color: var(--accent);
+    box-shadow: var(--shadow);
   }
   .fa-script {
     font-size: 40px;

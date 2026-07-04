@@ -1505,4 +1505,259 @@ export const words: Word[] = [
     category: 'Begrüßung', register: 'colloquial', origin: 'pie', partOfSpeech: 'phrase', cognates: [],
     formalNote: 'wörtlich „wie bist du"; formeller: hāl-e shomā chetor-e?',
   },
+
+  // === Tiere ===
+  {
+    id: 'sag', scriptFa: 'سگ', translit: 'sag',
+    translationDe: 'Hund', translationEn: 'dog',
+    category: 'Tiere', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'gorbe', scriptFa: 'گربه', translit: 'gorbe',
+    translationDe: 'Katze', translationEn: 'cat',
+    category: 'Tiere', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'asb', scriptFa: 'اسب', translit: 'asb',
+    translationDe: 'Pferd', translationEn: 'horse',
+    category: 'Tiere', register: 'both', origin: 'pie', partOfSpeech: 'noun',
+    cognates: [{ language: 'la', form: 'equus', note: 'PIE *h₁éḱwos' }],
+  },
+  {
+    id: 'mush', scriptFa: 'موش', translit: 'mush',
+    translationDe: 'Maus', translationEn: 'mouse',
+    category: 'Tiere', register: 'both', origin: 'pie', partOfSpeech: 'noun',
+    cognates: [
+      { language: 'la', form: 'mūs', note: 'PIE *muh₂s' },
+      { language: 'de', form: 'Maus', note: '' },
+      { language: 'en', form: 'mouse', note: '' },
+    ],
+  },
+  {
+    id: 'gorg', scriptFa: 'گرگ', translit: 'gorg',
+    translationDe: 'Wolf', translationEn: 'wolf',
+    category: 'Tiere', register: 'both', origin: 'pie', partOfSpeech: 'noun',
+    cognates: [
+      { language: 'la', form: 'lupus', note: 'PIE *wĺ̥kʷos' },
+      { language: 'de', form: 'Wolf', note: '' },
+      { language: 'en', form: 'wolf', note: '' },
+    ],
+  },
+  {
+    id: 'mahi', scriptFa: 'ماهی', translit: 'māhi',
+    translationDe: 'Fisch', translationEn: 'fish',
+    category: 'Tiere', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'parande', scriptFa: 'پرنده', translit: 'parande',
+    translationDe: 'Vogel', translationEn: 'bird',
+    category: 'Tiere', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'gusfand', scriptFa: 'گوسفند', translit: 'gusfand',
+    translationDe: 'Schaf', translationEn: 'sheep',
+    category: 'Tiere', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+
+  // === Zuhause & Dinge ===
+  {
+    id: 'miz', scriptFa: 'میز', translit: 'miz',
+    translationDe: 'Tisch', translationEn: 'table',
+    category: 'Zuhause', register: 'both', origin: 'other', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'sandali', scriptFa: 'صندلی', translit: 'ṣandali',
+    translationDe: 'Stuhl', translationEn: 'chair',
+    category: 'Zuhause', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+    formalNote: 'ص = ṣ (Laut = normales s).',
+  },
+  {
+    id: 'panjere', scriptFa: 'پنجره', translit: 'panjere',
+    translationDe: 'Fenster', translationEn: 'window',
+    category: 'Zuhause', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'divar', scriptFa: 'دیوار', translit: 'divār',
+    translationDe: 'Wand / Mauer', translationEn: 'wall',
+    category: 'Zuhause', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'takht', scriptFa: 'تخت', translit: 'takht',
+    translationDe: 'Bett', translationEn: 'bed',
+    category: 'Zuhause', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'hammam', scriptFa: 'حمام', translit: 'ḥammām',
+    translationDe: 'Bad / Badezimmer', translationEn: 'bath(room)',
+    category: 'Zuhause', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+    formalNote: 'ح = ḥ (Laut = normales h).',
+  },
+  {
+    id: 'pul', scriptFa: 'پول', translit: 'pul',
+    translationDe: 'Geld', translationEn: 'money',
+    category: 'Alltag', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'qalam', scriptFa: 'قلم', translit: 'qalam',
+    translationDe: 'Stift', translationEn: 'pen',
+    category: 'Zuhause', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+  },
+
+  // === Transport ===
+  {
+    id: 'mashin', scriptFa: 'ماشین', translit: 'māshin',
+    translationDe: 'Auto', translationEn: 'car',
+    category: 'Transport', register: 'both', origin: 'french_loan', partOfSpeech: 'noun',
+    cognates: [{ language: 'en', form: 'machine', note: 'über frz. machine' }],
+  },
+  {
+    id: 'otobus', scriptFa: 'اتوبوس', translit: 'otobus',
+    translationDe: 'Bus', translationEn: 'bus',
+    category: 'Transport', register: 'both', origin: 'french_loan', partOfSpeech: 'noun',
+    cognates: [{ language: 'en', form: 'autobus', note: '' }],
+  },
+  {
+    id: 'qatar', scriptFa: 'قطار', translit: 'qaṭār',
+    translationDe: 'Zug', translationEn: 'train',
+    category: 'Transport', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+    formalNote: 'ط = ṭ (Laut = normales t).',
+  },
+  {
+    id: 'havapeyma', scriptFa: 'هواپیما', translit: 'havāpeymā',
+    translationDe: 'Flugzeug', translationEn: 'airplane',
+    category: 'Transport', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+    formalNote: 'wörtlich „Luft-Durchmesser": havā (Luft) + peymā (messend).',
+  },
+
+  // === Berufe & Leute ===
+  {
+    id: 'moallem', scriptFa: 'معلم', translit: 'moʿallem',
+    translationDe: 'Lehrer(in)', translationEn: 'teacher',
+    category: 'Beruf', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+    formalNote: 'ع = ayn (Knacklaut).',
+  },
+  {
+    id: 'doktor', scriptFa: 'دکتر', translit: 'doktor',
+    translationDe: 'Arzt / Doktor', translationEn: 'doctor',
+    category: 'Beruf', register: 'both', origin: 'french_loan', partOfSpeech: 'noun',
+    cognates: [{ language: 'en', form: 'doctor', note: 'La doctor „Lehrer"' }],
+  },
+  {
+    id: 'mard', scriptFa: 'مرد', translit: 'mard',
+    translationDe: 'Mann', translationEn: 'man',
+    category: 'Alltag', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+
+  // === Adjektive (erweitert) ===
+  {
+    id: 'dur', scriptFa: 'دور', translit: 'dur',
+    translationDe: 'fern / weit', translationEn: 'far',
+    category: 'Adjektiv', register: 'both', origin: 'pie', partOfSpeech: 'adjective', cognates: [],
+  },
+  {
+    id: 'nazdik', scriptFa: 'نزدیک', translit: 'nazdik',
+    translationDe: 'nah', translationEn: 'near',
+    category: 'Adjektiv', register: 'both', origin: 'pie', partOfSpeech: 'adjective', cognates: [],
+  },
+  {
+    id: 'asan', scriptFa: 'آسان', translit: 'āsān',
+    translationDe: 'leicht / einfach', translationEn: 'easy',
+    category: 'Adjektiv', register: 'both', origin: 'pie', partOfSpeech: 'adjective', cognates: [],
+  },
+  {
+    id: 'sakht', scriptFa: 'سخت', translit: 'sakht',
+    translationDe: 'schwer / hart', translationEn: 'hard / difficult',
+    category: 'Adjektiv', register: 'both', origin: 'pie', partOfSpeech: 'adjective', cognates: [],
+  },
+  {
+    id: 'tamiz', scriptFa: 'تمیز', translit: 'tamiz',
+    translationDe: 'sauber', translationEn: 'clean',
+    category: 'Adjektiv', register: 'both', origin: 'pie', partOfSpeech: 'adjective', cognates: [],
+  },
+  {
+    id: 'kasif', scriptFa: 'کثیف', translit: 'kas̱if',
+    translationDe: 'schmutzig', translationEn: 'dirty',
+    category: 'Adjektiv', register: 'both', origin: 'arabic_loan', partOfSpeech: 'adjective', cognates: [],
+    formalNote: 'ث = s̱ (Laut = normales s), arabische Herkunft.',
+  },
+  {
+    id: 'geran', scriptFa: 'گران', translit: 'gerān',
+    translationDe: 'teuer', translationEn: 'expensive',
+    category: 'Adjektiv', register: 'both', origin: 'pie', partOfSpeech: 'adjective', cognates: [],
+  },
+  {
+    id: 'arzan', scriptFa: 'ارزان', translit: 'arzān',
+    translationDe: 'billig', translationEn: 'cheap',
+    category: 'Adjektiv', register: 'both', origin: 'pie', partOfSpeech: 'adjective', cognates: [],
+  },
+  {
+    id: 'khoshhal', scriptFa: 'خوشحال', translit: 'khoshḥāl',
+    translationDe: 'froh / glücklich', translationEn: 'happy',
+    category: 'Adjektiv', register: 'both', origin: 'other', partOfSpeech: 'adjective', cognates: [],
+    formalNote: 'khosh (persisch, „gut") + ḥāl (arab., „Zustand"). ح = ḥ.',
+  },
+
+  // === Verben (erweitert) ===
+  {
+    id: 'forukhtan', scriptFa: 'فروختن', translit: 'forukhtan',
+    translationDe: 'verkaufen', translationEn: 'to sell',
+    category: 'Verb', register: 'both', origin: 'pie', partOfSpeech: 'verb', cognates: [],
+    formalNote: 'Präsensstamm forush- (mi-forush-am).',
+  },
+  {
+    id: 'bastan', scriptFa: 'بستن', translit: 'bastan',
+    translationDe: 'schließen / binden', translationEn: 'to close / tie',
+    category: 'Verb', register: 'both', origin: 'pie', partOfSpeech: 'verb',
+    cognates: [
+      { language: 'de', form: 'binden', note: 'PIE *bʰendʰ-' },
+      { language: 'en', form: 'bind', note: '' },
+    ],
+  },
+  {
+    id: 'porsidan', scriptFa: 'پرسیدن', translit: 'porsidan',
+    translationDe: 'fragen', translationEn: 'to ask',
+    category: 'Verb', register: 'both', origin: 'pie', partOfSpeech: 'verb', cognates: [],
+    formalNote: 'Präsensstamm pors- (mi-pors-am).',
+  },
+  {
+    id: 'zadan', scriptFa: 'زدن', translit: 'zadan',
+    translationDe: 'schlagen / (Funktionsverb)', translationEn: 'to hit / strike',
+    category: 'Verb', register: 'both', origin: 'pie', partOfSpeech: 'verb', cognates: [],
+    formalNote: 'Häufiges Funktionsverb: harf zadan „sprechen", zang zadan „anrufen".',
+  },
+  {
+    id: 'shostan', scriptFa: 'شستن', translit: 'shostan',
+    translationDe: 'waschen', translationEn: 'to wash',
+    category: 'Verb', register: 'both', origin: 'pie', partOfSpeech: 'verb', cognates: [],
+  },
+
+  // === Zeit & Partikel (erweitert) ===
+  {
+    id: 'hala', scriptFa: 'حالا', translit: 'ḥālā',
+    translationDe: 'jetzt', translationEn: 'now',
+    category: 'Zeit', register: 'colloquial', origin: 'arabic_loan', partOfSpeech: 'adverb', cognates: [],
+    formalNote: 'ح = ḥ.',
+  },
+  {
+    id: 'qabl', scriptFa: 'قبل', translit: 'qabl',
+    translationDe: 'vor / vorher', translationEn: 'before',
+    category: 'Zeit', register: 'both', origin: 'arabic_loan', partOfSpeech: 'adverb', cognates: [],
+  },
+  {
+    id: 'baad', scriptFa: 'بعد', translit: 'baʿd',
+    translationDe: 'nach / danach', translationEn: 'after',
+    category: 'Zeit', register: 'both', origin: 'arabic_loan', partOfSpeech: 'adverb', cognates: [],
+    formalNote: 'ع = ayn (Knacklaut).',
+  },
+  {
+    id: 'hanuz', scriptFa: 'هنوز', translit: 'hanuz',
+    translationDe: 'noch / immer noch', translationEn: 'still / yet',
+    category: 'Zeit', register: 'both', origin: 'pie', partOfSpeech: 'adverb', cognates: [],
+  },
+  {
+    id: 'bale', scriptFa: 'بله', translit: 'bale',
+    translationDe: 'ja', translationEn: 'yes',
+    category: 'Partikel', register: 'formal', origin: 'pie', partOfSpeech: 'particle', cognates: [],
+    formalNote: 'Neutral/schriftsprachlich; umgangssprachlich āre.',
+  },
 ]

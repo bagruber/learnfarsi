@@ -103,17 +103,11 @@ export function AlphabetQuiz({ baseline }: { baseline: boolean }) {
       <div className="card-main">
         {direction === 'toScript' ? (
           <>
-            <p className="prompt">
-              {tolerant ? (
-                <>
-                  Welcher Buchstabe klingt wie „{target.sound}"? <em>(alle richtigen zählen)</em>
-                </>
-              ) : (
-                <>
-                  Welcher Buchstabe ist „<TranslitText value={target.translit} />"?
-                </>
-              )}
-            </p>
+            <p className="prompt">Welcher Buchstabe {tolerant ? 'klingt so' : 'ist das'}?</p>
+            <div className="alpha-target">
+              {tolerant ? target.sound : <TranslitText value={target.translit} />}
+            </div>
+            {tolerant && <p className="muted">alle gleichklingenden zählen</p>}
 
             <div className="keyboard" dir="rtl" lang="fa">
               {alphabet.map((l) => {
