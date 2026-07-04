@@ -76,8 +76,9 @@ Repo-Settings → Pages → Source = „GitHub Actions". Der lokale Fortschritt 
 auf Pages; nur echte Geräte-Sync fehlt weiterhin (bewusst).
 
 ### Vokabelumfang
-Von ~32 → ~67 → ~155 → **~197** Wörter (zusätzlich Tiere, Zuhause, Transport, Berufe, mehr
-Adjektive/Verben). Viele echte PIE-Cognates als Etymologie-Anker. „bad" als
+Von ~32 → ~67 → ~155 → ~197 → **~230** Wörter (zusätzlich Zehnerzahlen, mehr Körper/Essen/Zeit/
+Wetter/Gefühle/Farben/Familie). Verbstämme von 18 → **36** erweitert (starke Präsens-Divergenz:
+pokhtan→paz, sākhtan→sāz, andākhtan→andāz …). Viele echte PIE-Cognates als Etymologie-Anker. „bad" als
 **falscher Freund** markiert. Mehrdeutige Schreibungen notiert (شیر = Milch/Löwe, کی = wer/wann,
 نه = neun/nein). Kanten mit arabisch-stämmigen Buchstaben in nativen Wörtern (غ in morgh, ذ in
 gozāshtan) bewusst **ausgelassen**, um die „kein Diacritic = persisch"-Regel nicht zu untergraben.

@@ -1760,4 +1760,206 @@ export const words: Word[] = [
     category: 'Partikel', register: 'formal', origin: 'pie', partOfSpeech: 'particle', cognates: [],
     formalNote: 'Neutral/schriftsprachlich; umgangssprachlich āre.',
   },
+
+  // === Zahlen (Zehner & mehr) ===
+  {
+    id: 'bist', scriptFa: 'بیست', translit: 'bist',
+    translationDe: 'zwanzig', translationEn: 'twenty',
+    category: 'Zahlen', register: 'both', origin: 'pie', partOfSpeech: 'number',
+    cognates: [{ language: 'la', form: 'vīgintī', note: 'PIE *wīḱm̥tih₁' }],
+  },
+  {
+    id: 'si', scriptFa: 'سی', translit: 'si',
+    translationDe: 'dreißig', translationEn: 'thirty',
+    category: 'Zahlen', register: 'both', origin: 'pie', partOfSpeech: 'number', cognates: [],
+  },
+  {
+    id: 'panjah', scriptFa: 'پنجاه', translit: 'panjāh',
+    translationDe: 'fünfzig', translationEn: 'fifty',
+    category: 'Zahlen', register: 'both', origin: 'pie', partOfSpeech: 'number', cognates: [],
+  },
+  {
+    id: 'hezar', scriptFa: 'هزار', translit: 'hezār',
+    translationDe: 'tausend', translationEn: 'thousand',
+    category: 'Zahlen', register: 'both', origin: 'pie', partOfSpeech: 'number', cognates: [],
+  },
+
+  // === Körper (erweitert) ===
+  {
+    id: 'zanu', scriptFa: 'زانو', translit: 'zānu',
+    translationDe: 'Knie', translationEn: 'knee',
+    category: 'Körper', register: 'both', origin: 'pie', partOfSpeech: 'noun',
+    cognates: [
+      { language: 'la', form: 'genū', note: 'PIE *ǵónu' },
+      { language: 'de', form: 'Knie', note: '' },
+      { language: 'en', form: 'knee', note: '' },
+    ],
+  },
+  {
+    id: 'surat', scriptFa: 'صورت', translit: 'ṣurat',
+    translationDe: 'Gesicht', translationEn: 'face',
+    category: 'Körper', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+    formalNote: 'ص = ṣ. Auch „Rechnung/Liste".',
+  },
+  {
+    id: 'gardan', scriptFa: 'گردن', translit: 'gardan',
+    translationDe: 'Hals / Nacken', translationEn: 'neck',
+    category: 'Körper', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+
+  // === Essen (erweitert) ===
+  {
+    id: 'miveh', scriptFa: 'میوه', translit: 'miveh',
+    translationDe: 'Obst / Frucht', translationEn: 'fruit',
+    category: 'Essen', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'sir', scriptFa: 'سیر', translit: 'sir',
+    translationDe: 'Knoblauch', translationEn: 'garlic',
+    category: 'Essen', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+    formalNote: 'سیر ist mehrdeutig: „sir" = Knoblauch UND satt.',
+  },
+  {
+    id: 'asal', scriptFa: 'عسل', translit: 'ʿasal',
+    translationDe: 'Honig', translationEn: 'honey',
+    category: 'Essen', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+    formalNote: 'ع = ayn (Knacklaut).',
+  },
+
+  // === Zeit (erweitert, viele arabische Marker) ===
+  {
+    id: 'zohr', scriptFa: 'ظهر', translit: 'żohr',
+    translationDe: 'Mittag', translationEn: 'noon',
+    category: 'Zeit', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+    formalNote: 'ظ = ż (Laut = normales z).',
+  },
+  {
+    id: 'asr', scriptFa: 'عصر', translit: 'ʿaṣr',
+    translationDe: 'Nachmittag', translationEn: 'afternoon',
+    category: 'Zeit', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+    formalNote: 'Zwei arabische Marker: ع = ayn und ص = ṣ.',
+  },
+  {
+    id: 'daqiqe', scriptFa: 'دقیقه', translit: 'daqiqe',
+    translationDe: 'Minute', translationEn: 'minute',
+    category: 'Zeit', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'saniye', scriptFa: 'ثانیه', translit: 's̱āniye',
+    translationDe: 'Sekunde', translationEn: 'second',
+    category: 'Zeit', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+    formalNote: 'ث = s̱ (Laut = normales s).',
+  },
+
+  // === Wetter / Natur (erweitert) ===
+  {
+    id: 'hava', scriptFa: 'هوا', translit: 'havā',
+    translationDe: 'Wetter / Luft', translationEn: 'weather / air',
+    category: 'Natur', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'abr', scriptFa: 'ابر', translit: 'abr',
+    translationDe: 'Wolke', translationEn: 'cloud',
+    category: 'Natur', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'yakh', scriptFa: 'یخ', translit: 'yakh',
+    translationDe: 'Eis', translationEn: 'ice',
+    category: 'Natur', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+
+  // === Adjektive & Gefühle (erweitert) ===
+  {
+    id: 'khaste', scriptFa: 'خسته', translit: 'khaste',
+    translationDe: 'müde', translationEn: 'tired',
+    category: 'Adjektiv', register: 'both', origin: 'pie', partOfSpeech: 'adjective', cognates: [],
+  },
+  {
+    id: 'gorosne', scriptFa: 'گرسنه', translit: 'gorosne',
+    translationDe: 'hungrig', translationEn: 'hungry',
+    category: 'Adjektiv', register: 'both', origin: 'pie', partOfSpeech: 'adjective', cognates: [],
+  },
+  {
+    id: 'teshne', scriptFa: 'تشنه', translit: 'teshne',
+    translationDe: 'durstig', translationEn: 'thirsty',
+    category: 'Adjektiv', register: 'both', origin: 'pie', partOfSpeech: 'adjective', cognates: [],
+  },
+  {
+    id: 'mariz', scriptFa: 'مریض', translit: 'mariẓ',
+    translationDe: 'krank', translationEn: 'sick',
+    category: 'Adjektiv', register: 'both', origin: 'arabic_loan', partOfSpeech: 'adjective', cognates: [],
+    formalNote: 'ض = ẓ (Laut = normales z).',
+  },
+  {
+    id: 'mohem', scriptFa: 'مهم', translit: 'mohem',
+    translationDe: 'wichtig', translationEn: 'important',
+    category: 'Adjektiv', register: 'both', origin: 'arabic_loan', partOfSpeech: 'adjective', cognates: [],
+  },
+  {
+    id: 'rahat', scriptFa: 'راحت', translit: 'rāḥat',
+    translationDe: 'bequem / entspannt', translationEn: 'comfortable',
+    category: 'Adjektiv', register: 'both', origin: 'arabic_loan', partOfSpeech: 'adjective', cognates: [],
+    formalNote: 'ح = ḥ (Laut = normales h).',
+  },
+  {
+    id: 'khoshgel', scriptFa: 'خوشگل', translit: 'khoshgel',
+    translationDe: 'hübsch', translationEn: 'pretty',
+    category: 'Adjektiv', register: 'colloquial', origin: 'pie', partOfSpeech: 'adjective', cognates: [],
+    formalNote: 'khosh (gut) + gel (Blume/Ton).',
+  },
+  {
+    id: 'asabani', scriptFa: 'عصبانی', translit: 'ʿaṣabāni',
+    translationDe: 'wütend', translationEn: 'angry',
+    category: 'Adjektiv', register: 'both', origin: 'arabic_loan', partOfSpeech: 'adjective', cognates: [],
+    formalNote: 'ع = ayn, ص = ṣ.',
+  },
+  {
+    id: 'narahat', scriptFa: 'ناراحت', translit: 'nārāḥat',
+    translationDe: 'traurig / unwohl', translationEn: 'upset / sad',
+    category: 'Adjektiv', register: 'both', origin: 'other', partOfSpeech: 'adjective', cognates: [],
+    formalNote: 'nā- (Verneinung, persisch) + rāḥat (arab.). ح = ḥ.',
+  },
+
+  // === Farben (erweitert) ===
+  {
+    id: 'banafsh', scriptFa: 'بنفش', translit: 'banafsh',
+    translationDe: 'violett / lila', translationEn: 'purple',
+    category: 'Farbe', register: 'both', origin: 'pie', partOfSpeech: 'adjective', cognates: [],
+  },
+  {
+    id: 'narenji', scriptFa: 'نارنجی', translit: 'nārenji',
+    translationDe: 'orange', translationEn: 'orange',
+    category: 'Farbe', register: 'both', origin: 'other', partOfSpeech: 'adjective',
+    cognates: [{ language: 'en', form: 'orange', note: 'von pers. nārenj „Orange"' }],
+  },
+
+  // === Familie & Alltag (erweitert) ===
+  {
+    id: 'arus', scriptFa: 'عروس', translit: 'ʿarus',
+    translationDe: 'Braut / Schwiegertochter', translationEn: 'bride',
+    category: 'Familie', register: 'both', origin: 'arabic_loan', partOfSpeech: 'noun', cognates: [],
+    formalNote: 'ع = ayn (Knacklaut).',
+  },
+  {
+    id: 'nave', scriptFa: 'نوه', translit: 'nave',
+    translationDe: 'Enkel(in)', translationEn: 'grandchild',
+    category: 'Familie', register: 'both', origin: 'pie', partOfSpeech: 'noun', cognates: [],
+  },
+  {
+    id: 'famil', scriptFa: 'فامیل', translit: 'fāmil',
+    translationDe: 'Verwandte(r)', translationEn: 'relative(s)',
+    category: 'Familie', register: 'both', origin: 'french_loan', partOfSpeech: 'noun',
+    cognates: [{ language: 'en', form: 'family', note: 'über frz. famille' }],
+  },
+  {
+    id: 'cheqadr', scriptFa: 'چقدر', translit: 'cheqadr',
+    translationDe: 'wie viel', translationEn: 'how much',
+    category: 'Fragewort', register: 'both', origin: 'other', partOfSpeech: 'adverb', cognates: [],
+    formalNote: 'che (was) + qadr (arab. „Maß").',
+  },
+  {
+    id: 'kami', scriptFa: 'کمی', translit: 'kami',
+    translationDe: 'ein bisschen', translationEn: 'a little',
+    category: 'Alltag', register: 'both', origin: 'pie', partOfSpeech: 'adverb', cognates: [],
+  },
 ]
