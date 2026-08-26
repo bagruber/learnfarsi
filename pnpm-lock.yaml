@@ -28,7 +28,7 @@ importers:
         specifier: ^19.2.3
         version: 19.2.5(@types/react@19.2.18)
       '@vitejs/plugin-react':
-        specifier: ^6.0.3
+        specifier: ^6.1.0
         version: 6.1.0(vite@8.2.2(@types/node@26.3.0))
       oxlint:
         specifier: ^1.71.0
@@ -37,7 +37,7 @@ importers:
         specifier: ~7.0.2
         version: 7.0.2
       vite:
-        specifier: ^8.1.1
+        specifier: ^8.2.2
         version: 8.2.2(@types/node@26.3.0)
 
 packages:
